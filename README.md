@@ -32,7 +32,10 @@ ansible-playbook -i inv main.yaml
 
 
 
-# This playbook will do the following:
+============
+
+
+### This playbook will do the following:
  Install and configure ELK stack based on the inventory
 
  Install front end web server
