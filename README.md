@@ -19,6 +19,10 @@
  In order to run ansible playbook, git clone the directory, navigate to the directory
 ```
 cd install_elk
+vagrant up
+```
+ After VM is up, check whether ansible can communicate with vm,
+```
 ansible all -i inv -m ping
 ```
 If above step returns green, run following command to deploy elk on newly created vm
