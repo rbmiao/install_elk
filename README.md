@@ -10,17 +10,27 @@
 
  At the moment, ansible running with username:vagrant, password: vagrant
  It could use passwordless login.
+ ```
+ brew install hudochenkov/sshpass/sshpass
+ ```
+
+ And set host_key_checking to false in ansible.cfg
+ ```
+ [defaults]
+host_key_checking = False
+ ```
 
  In order to run ansible playbook, git clone this repo.
 ```
 git clone git@github.com/rbmiao/install_elk.git
 ```
 
- navigate to the directory, create vm using Vagrantfile:
+ Navigate to the directory, create vm using Vagrantfile:
 ```
 cd install_elk
 vagrant up
 ```
+
 
  In order to run playbook, promote user vagrant to root in main.yml
 ```
