@@ -1,14 +1,14 @@
 
 =
 Install and configure ELK on RHEL/CentOS 7
---> Ansible server: Macbook pro
---> Ansible client: vagrant vm, craeted by Vagrantfile
---> On macbook, add following to /etc/hosts:
+# Ansible server: Macbook pro
+## Ansible client: vagrant vm, craeted by Vagrantfile
+### On macbook, add following to /etc/hosts:
 ```
 192.168.2.102	devops1
 ```
---> At the moment, ansible running with username:vagrant, password: vagrant
---> In order to run playbook, promote vagrant user to root in main.yml
+# At the moment, ansible running with username:vagrant, password: vagrant
+## In order to run playbook, promote vagrant user to root in main.yml
 ```
   become: yes
   become_user: root
