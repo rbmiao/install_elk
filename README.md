@@ -1,20 +1,19 @@
 
-=
-Install and configure ELK on RHEL/CentOS 7
-# Ansible server: Macbook pro
-## Ansible client: vagrant vm, craeted by Vagrantfile
+# Install and configure ELK on RHEL/CentOS 7
+### Ansible server: Macbook pro
+### Ansible client: vagrant vm, craeted by Vagrantfile
 ### On macbook, add following to /etc/hosts:
 ```
 192.168.2.102	devops1
 ```
-# At the moment, ansible running with username:vagrant, password: vagrant
-## In order to run playbook, promote vagrant user to root in main.yml
+### At the moment, ansible running with username:vagrant, password: vagrant
+### In order to run playbook, promote vagrant user to root in main.yml
 ```
   become: yes
   become_user: root
 ```
-=
-In order to run ansible playbook, git clone the directory, navigate to the directory
+
+# In order to run ansible playbook, git clone the directory, navigate to the directory
 ```
 cd install_elk
 ansible all -i inv -m ping
@@ -23,22 +22,22 @@ If above step returns green, run following command to deploy elk on newly create
 ```
 ansible-playbook -i inv main.yaml
 ```
-=
-Login to kibana http://devops1, username: kibana, password: kibana
+
+### Login to kibana http://devops1, username: kibana, password: kibana
 
 
-=
-This playbook will do the following:
---> Install and configure ELK stack based on the inventory
 
---> Install front end web server
+# This playbook will do the following:
+### Install and configure ELK stack based on the inventory
 
---> Configure customized directories to manage index data
+### Install front end web server
 
---> Secure Kibana, can be accessed only through the front end web server
+### Configure customized directories to manage index data
 
---> Front end web server secured using htpasswd
+### Secure Kibana, can be accessed only through the front end web server
 
---> Install and configure Curator for log cleanups
+### Front end web server secured using htpasswd
+
+### Install and configure Curator for log cleanups
 
 Default kibana credentials: user:kibana password:kibana
