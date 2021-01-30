@@ -9,18 +9,25 @@
 ```
 
  At the moment, ansible running with username:vagrant, password: vagrant
+ It could use passwordless login.
 
- In order to run playbook, promote vagrant user to root in main.yml
+ In order to run ansible playbook, git clone this repo.
+```
+git clone git@github.com/rbmiao/install_elk.git
+```
+
+ navigate to the directory, create vm using Vagrantfile:
+```
+cd install_elk
+vagrant up
+```
+
+ In order to run playbook, promote user vagrant to root in main.yml
 ```
   become: yes
   become_user: root
 ```
 
- In order to run ansible playbook, git clone the directory, navigate to the directory
-```
-cd install_elk
-vagrant up
-```
  After VM is up, check whether ansible can communicate with vm,
 ```
 ansible all -i inv -m ping
