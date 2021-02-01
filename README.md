@@ -63,3 +63,44 @@ ansible-playbook -i inv main.yaml
 * Install and configure Curator for log cleanups
 
 ### Default kibana credentials: user:kibana password:kibana
+
+
+===========
+### Visualize logs in Kibana -  
+* Put 01-input_syslog.conf in /etc/logstach/conf.d/01-input_syslog.conf
+  And restart logstash:
+```
+sudo systemctl restart logstash
+```
+* In order to send syslog to logstash, add following to rsyslog in /etc/rsyslog.conf
+```
+*.*     @192.168.2.102:10541
+``` 
+  And restart syslog
+```
+sudo systemctl restart rsyslog
+```
+
+* Since there are not much system logs, generate some logs using following script:
+```
+i=1; while i=1; do su - -c "hostname"; sleep 2; done
+```
+
+* Create index in Kibana
+
+* Create search patterens in Kibana
+
+* Create visualization in Kibana
+
+* Create dashboards in Kibana
+
+
+
+
+
+==========
+Reference: 
+
+https://www.youtube.com/watch?v=S6qE3LM4eb8
+
+
